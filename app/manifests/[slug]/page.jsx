@@ -20,11 +20,9 @@ async function SingleManifest({ params }) {
             <ContentHeader
                 author={response?.data?.attributes?.title}
             />
-
-            <div className="[&_p]:mb-2 font-light p-4">
+            <div className="[&_p]:mb-2 font-light mb-6">
                 <MDContent content={response?.data?.attributes?.content} />
             </div>
-
             {response?.data?.attributes?.authors?.data?.length !== 0 && (
 
                 <>

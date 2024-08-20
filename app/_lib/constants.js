@@ -19,6 +19,18 @@ export const navMenu = [
     },
     {
         id: 4,
+        title: "უავტორო ჩანაწერები",
+        path: '/no-authors',
+        children: false
+    },
+    {
+        id: 5,
+        title: 'ბიბლიოგრაფია',
+        path: '/bibliography',
+        children: false
+    },
+    {
+        id: 6,
         title: 'პროექტის შესახებ',
         path: '/about',
         children: false

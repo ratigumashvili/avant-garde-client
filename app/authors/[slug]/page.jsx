@@ -23,7 +23,7 @@ async function page({ params }) {
       <h2 className='font-gordeziani text-4xl font-light mb-4'>
         {author[0]?.attributes?.name}
       </h2>
-
+      
       <div className="[&_p]:mb-2 font-light mb-6">
         <MDContent content={author[0]?.attributes?.bio} />
       </div>

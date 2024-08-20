@@ -1,9 +1,12 @@
 import Link from 'next/link'
 
 import { getWorkByCategory } from '@/app/_lib/apiCalls'
+import { PER_PAGE } from '@/app/_lib/constants'
+
 import ContentHeader from '@/app/_components/ContentHeader'
 import Pagination from '@/app/_components/Pagination'
-import { PER_PAGE } from '@/app/_lib/constants'
+import NothingFound from '@/app/_components/NothingFound'
+
 
 async function page({ params, searchParams }) {
 
@@ -13,9 +16,7 @@ async function page({ params, searchParams }) {
 
 
     if (!response?.data?.length) {
-        return <h2 className='font-gordeziani text-2xl font-light p-4'>
-            არაფერი მოიძებნა
-        </h2>
+        return <NothingFound title="არაფერი მოიძებნა" />
     }
 
     return (
