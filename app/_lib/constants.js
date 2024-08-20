@@ -7,8 +7,8 @@ export const navMenu = [
     },
     {
         id: 2,
-        title: 'მანიფესტი',
-        path: '/manifest',
+        title: 'მანიფესტები',
+        path: '/manifests',
         children: false
     },
     {

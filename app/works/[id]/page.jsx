@@ -13,7 +13,7 @@ async function page({ params }) {
         <div className="p-4 w-full">
 
             <ContentHeader
-                author={data?.data?.attributes?.author?.data?.attributes?.name}
+                author={data?.data?.attributes?.authors?.data[0]?.attributes?.name}
                 title={data?.data?.attributes?.title}
             />
 
