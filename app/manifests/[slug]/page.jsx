@@ -4,10 +4,15 @@ import { getManifestById } from "@/app/_lib/apiCalls"
 
 import ContentHeader from "@/app/_components/ContentHeader"
 import MDContent from "@/app/_components/MDContent"
+import NothingFound from "@/app/_components/NothingFound"
 
 async function SingleManifest({ params }) {
 
     const response = await getManifestById(params.slug)
+
+    if(response === undefined) {
+        return <NothingFound />
+    }
 
     return (
         <div className="p-4 w-full">
