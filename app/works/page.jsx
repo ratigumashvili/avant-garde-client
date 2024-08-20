@@ -1,8 +1,9 @@
-import React from 'react'
 
-function page() {
+
+async function page() {
+
   return (
-    <div>all works</div>
+    <div className='w-full p-4'>all works</div>
   )
 }
 

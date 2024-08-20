@@ -24,17 +24,19 @@ async function page({ params }) {
         {author[0]?.attributes?.name}
       </h2>
 
-      <div className="[&_p]:mb-2 font-light mb-4">
+      <div className="[&_p]:mb-2 font-light mb-6">
         <MDContent content={author[0]?.attributes?.bio} />
       </div>
 
       <h2 className='font-gordeziani text-3xl font-light'>შრომები</h2>
 
-      {filteredCategories.map((cat, index) => (
-        <p key={index} className='mb-1'>
-          <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
-        </p>
-      ))}
+      <ul className='mt-2'>
+        {filteredCategories.map((cat, index) => (
+          <li key={index} className='mb-2 font-firaGo font-light'>
+            <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
+          </li>
+        ))}
+      </ul>
 
     </div>
   )

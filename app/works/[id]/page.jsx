@@ -1,20 +1,24 @@
 import ContentHeader from "@/app/_components/ContentHeader"
 import MDContent from "@/app/_components/MDContent"
+import NothingFound from "@/app/_components/NothingFound"
 import { getWorkById } from "@/app/_lib/apiCalls"
 
 async function page({ params }) {
-    const { data: work } = await getWorkById(params.id)
+
+    const data = await getWorkById(params.id)
+
+    if(!data) return <NothingFound />
 
     return (
         <div className="p-4 w-full">
 
             <ContentHeader
-                author={work?.attributes?.author?.data?.attributes?.name}
-                title={work?.attributes?.title}
+                author={data?.data?.attributes?.author?.data?.attributes?.name}
+                title={data?.data?.attributes?.title}
             />
 
             <div className="[&_p]:mb-2 font-light mb-4">
-                <MDContent content={work?.attributes?.content} />
+                <MDContent content={data?.data?.attributes?.content} />
             </div>
 
         </div>

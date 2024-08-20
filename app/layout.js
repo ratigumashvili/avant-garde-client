@@ -1,5 +1,6 @@
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import NavMenu from "./_components/NavMenu";
 import Sidebar from "./_components/Sidebar";
 import { firaGo, gordeziani } from "./_lib/fonts";
 import "./globals.css";
@@ -12,13 +13,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${firaGo.variable} ${gordeziani.variable} font-sans px-4 container container-xl mx-auto flex flex-col h-screen`}>
+      <body className={`${firaGo.variable} ${gordeziani.variable} font-firaGo font-light flex flex-col h-screen`}>
 
-        <Header />
-        <main className="flex gap-4">
-          <Sidebar />
-          {children}
-        </main>
+        <div className="px-4 container container-xl mx-auto">
+          <Header />
+          <main className="flex flex-col md:flex-row">
+            {/* <Sidebar /> */}
+            <NavMenu />
+            {children}
+          </main>
+        </div>
         <Footer />
 
       </body>
