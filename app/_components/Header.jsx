@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import IconSearch from './icons/IconSearch'
+import Image from 'next/image'
 
 function Header() {
 
@@ -20,8 +21,8 @@ function Header() {
 
     return (
         <div className='p-4 flex justify-between border-b flex-col lg:flex-row items-center'>
-            <h1 className="font-gordeziani font-light text-5xl md:text-6xl mb-3 md:mb-0">
-               ქართული ფუტურიზმის 100 წელი
+            <h1 className="font-gordeziani font-light text-5xl md:text-6xl mb-3 md:mb-0 flex items-center gap-4">
+              <Image src="/iliauni-logo_eng.png" width={70} height={70} alt="ISU logo" className='grayscale' /> ქართული ფუტურიზმის 100 წელი
             </h1>
             <form onSubmit={handleFormSubmit}>
                 <div className='flex items-center gap-2'>
