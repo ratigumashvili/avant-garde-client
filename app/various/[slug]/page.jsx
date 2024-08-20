@@ -4,9 +4,9 @@ import { getWorkByVarious } from "@/app/_lib/apiCalls"
 
 import ContentHeader from "@/app/_components/ContentHeader"
 import NothingFound from "@/app/_components/NothingFound"
+import Pagination from "@/app/_components/Pagination"
 
 import { PER_PAGE } from "@/app/_lib/constants"
-import Pagination from "@/app/_components/Pagination"
 
 
 async function page({ params, searchParams }) {
