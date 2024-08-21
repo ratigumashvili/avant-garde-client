@@ -1,4 +1,5 @@
 import ContentHeader from "@/app/_components/ContentHeader"
+import ImageGallery from "@/app/_components/ImageGallery"
 import MDContent from "@/app/_components/MDContent"
 import NothingFound from "@/app/_components/NothingFound"
 import { getWorkById } from "@/app/_lib/apiCalls"
@@ -8,7 +9,7 @@ async function page({ params }) {
 
     const response = await getWorkById(params.id)
 
-    if(!response) return <NothingFound />
+    if (!response) return <NothingFound />
 
     return (
         <div className="p-4 w-full">
@@ -22,14 +23,9 @@ async function page({ params }) {
                 <MDContent content={response?.data?.attributes?.content} />
             </div>
 
-            {response?.data?.attributes?.images && response?.data?.attributes?.images?.data?.map((image) => (
-                <div key={image.id}>
-                    <Image src={image.attributes.url} width={150} height={150} alt={image.attributes.alternativeText} />
-                    <p>{image?.attributes?.caption}</p>
-                </div>
-            ))}
-
-            {/* {JSON.stringify(response?.data?.attributes?.images?.data, null, 2)} */}
+            {response?.data?.attributes?.images?.data && (
+                <ImageGallery images={response?.data?.attributes?.images?.data} />
+            )}
 
         </div>
     )

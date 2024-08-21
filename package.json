@@ -14,7 +14,9 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-markdown": "^8.0.6"
+    "react-grid-gallery": "^1.0.1",
+    "react-markdown": "^8.0.6",
+    "yet-another-react-lightbox": "^3.21.4"
   },
   "devDependencies": {
     "eslint": "^8",
