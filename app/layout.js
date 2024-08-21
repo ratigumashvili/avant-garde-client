@@ -1,7 +1,6 @@
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import NavMenu from "./_components/NavMenu";
-import Sidebar from "./_components/Sidebar";
 import { firaGo, gordeziani } from "./_lib/fonts";
 import "./globals.css";
 
@@ -18,7 +17,6 @@ export default function RootLayout({ children }) {
         <div className="px-4 container container-xl mx-auto">
           <Header />
           <main className="flex flex-col md:flex-row">
-            {/* <Sidebar /> */}
             <NavMenu />
             {children}
           </main>
