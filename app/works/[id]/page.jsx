@@ -3,7 +3,6 @@ import ImageGallery from "@/app/_components/ImageGallery"
 import MDContent from "@/app/_components/MDContent"
 import NothingFound from "@/app/_components/NothingFound"
 import { getWorkById } from "@/app/_lib/apiCalls"
-import Image from "next/image"
 
 async function page({ params }) {
 
