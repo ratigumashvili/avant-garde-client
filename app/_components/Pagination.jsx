@@ -23,7 +23,7 @@ function Pagination({ currentPage, path, response }) {
     }
 
     useEffect(() => {
-        router.push(path + current, { scroll: false })
+        router.replace(path + current, { scroll: false })
     }, [current])
 
     return (
