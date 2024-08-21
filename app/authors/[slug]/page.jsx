@@ -32,7 +32,7 @@ async function page({ params }) {
 
       <ul className='mt-2'>
         {filteredCategories.map((cat, index) => (
-          <li key={index} className='mb-2 font-firaGo font-light'>
+          <li key={index} className='mb-2 list'>
             <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
           </li>
         ))}

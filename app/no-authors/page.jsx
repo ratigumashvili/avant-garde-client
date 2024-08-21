@@ -20,7 +20,7 @@ async function NoAuthors({ searchParams }) {
 
         <ul className='h-full'>
           {response?.data?.length && response.data.map((work) => (
-            <li key={work.id} className='my-2'>
+            <li key={work.id} className='my-2 list'>
               <Link href={`/works/${work.id}`}>{work.attributes.title}</Link>
             </li>
           ))}

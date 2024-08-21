@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
 import { FIRST_PAGE, PER_PAGE } from "../_lib/constants"
+
 import IconLeft from "./icons/IconLeft"
 import IconRight from "./icons/IconRight"
 
@@ -13,7 +14,7 @@ function Pagination({ currentPage, path, response }) {
 
     const router = useRouter()
 
-    const { total } = response?.meta?.pagination
+    const total = response?.meta?.pagination?.total
     const hasNextPage = currentPage * PER_PAGE < total
     const hasPrevPage = currentPage > FIRST_PAGE
 

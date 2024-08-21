@@ -13,7 +13,7 @@ async function Manifests() {
 
             <ul>
                 {response.data.data.map((manifest) => (
-                    <li key={manifest.id} className="my-2">
+                    <li key={manifest.id} className="my-2 list">
                         <Link href={`/manifests/${manifest.id}`}>{manifest.attributes.title}</Link>
                     </li>
                 ))}

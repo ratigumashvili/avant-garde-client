@@ -18,7 +18,7 @@ function ContentHeader({ author, title }) {
             <h2 className='font-gordeziani text-4xl font-light'>
                 {author} {author && title ? (`// ${title}`) : title}
             </h2>
-            <GoBack />
+            {/* <GoBack /> */}
         </div>
     )
 }
