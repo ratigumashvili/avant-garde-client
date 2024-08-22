@@ -8,7 +8,7 @@ async function About() {
 
     return (
 
-        <div className="p-4">
+        <div className="p-4 w-full">
             <h2 className="font-gordeziani text-4xl font-light mb-4">პროექტის შესახებ</h2>
             <div className="[&_p]:mb-2 font-light">
                 <MDContent content={response?.data?.attributes?.content} />
