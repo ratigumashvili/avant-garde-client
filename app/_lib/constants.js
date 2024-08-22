@@ -1,4 +1,4 @@
-import { AlignLeft, BookText, House, LocateFixed, MessageCircleQuestion, Speech, UsersRound, Library } from "lucide-react"
+import { AlignLeft, BookText, House, LocateFixed, MessageCircleQuestion, Speech, UsersRound, Library, Binoculars } from "lucide-react"
 
 export const navMenu = [
     {
@@ -45,6 +45,12 @@ export const navMenu = [
     },
     {
         id: 8,
+        title: 'რესურსები',
+        path: '/resources',
+        icon: <Binoculars />
+    },
+    {
+        id: 9,
         title: 'პროექტის შესახებ',
         path: '/about',
         icon: <MessageCircleQuestion />
