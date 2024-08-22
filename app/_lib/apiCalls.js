@@ -4,9 +4,9 @@ const apiUrl = 'http://localhost:1337/api'
 
 export const getSinglePage = (slug) => axios.get(`${apiUrl}/${slug}`).then((resp) => resp.data)
 
-export const getAllAuthors = () => axios.get(`${apiUrl}/authors?pagination[page]=1&pagination[pageSize]=30`).then((resp) => resp.data)
+export const getAllAuthors = (params) => axios.get(`${apiUrl}/authors?populate[0]=photo&${params}`).then((resp) => resp.data)
 
-export const getAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$eq]=${slug}&populate[0]=works&populate[1]=works.category`).then((resp) => resp.data)
+export const getAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$eq]=${slug}&populate[0]=works&populate[1]=works.category&populate[2]=photo`).then((resp) => resp.data)
 
 export const getAllWorks = (params) => axios.get(`${apiUrl}/works?populate[0]=authors&${params}`).then((resp) => resp.data)
 
@@ -16,9 +16,9 @@ export const getWorkById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=
 
 export const getWorkByTitle = (title, params) => axios.get(`${apiUrl}/works?filters[$and][0][title][$contains]=${title}&populate=*&${params}`).then((resp) => resp.data)
 
-export const getSingleManifest = (slug) => axios.get(`${apiUrl}/manifests?filters[$and][0][slug][$eq]=${slug}&populate=*`).then((resp) => resp.data)
+export const getWorksBySlug = (slug, params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${slug}&${params}`)
 
-export const getAllManifests = () => axios.get(`${apiUrl}/works?filters[$and][0][category][title][$eq]=მანიფესტი&populate=*`)
+export const getSingleManifest = (slug) => axios.get(`${apiUrl}/manifests?filters[$and][0][slug][$eq]=${slug}&populate=*`).then((resp) => resp.data)
 
 export const getManifestById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=authors`).then((resp) => resp.data).catch((err) => console.log(err))
 

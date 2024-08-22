@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { getAuthor } from '@/app/_lib/apiCalls'
 import { removeDuplicates } from '@/app/_lib/helpers'
 import MDContent from '@/app/_components/MDContent'
+import ContentHeader from '@/app/_components/ContentHeader'
+import Image from 'next/image'
 
 async function page({ params }) {
   const { data: author } = await getAuthor(params.slug)
@@ -18,14 +20,34 @@ async function page({ params }) {
   const filteredCategories = removeDuplicates(categories)
 
   return (
-    <div className='p-4'>
+    <div className='p-4 w-full'>
 
-      <h2 className='font-gordeziani text-4xl font-light mb-4'>
-        {author[0]?.attributes?.name}
-      </h2>
-      
-      <div className="[&_p]:mb-2 font-light mb-6">
-        <MDContent content={author[0]?.attributes?.bio} />
+      <div className='flex flex-col md:flex-row gap-4 mb-4'>
+
+        {author[0]?.attributes?.photo?.data?.attributes?.url && (
+          <div>
+            <Image
+              src={author[0].attributes.photo.data.attributes.url}
+              alt={author[0].attributes.name}
+              width={100}
+              height={100}
+              className='w-full md:w-80 h-100 md:h-80 object-cover'
+            />
+
+          </div>
+        )}
+
+
+        <div className='w-full'>
+          <ContentHeader author={author[0]?.attributes?.name} />
+
+          <h3 className='mb-4'>{author[0]?.attributes?.dates}</h3>
+
+          <div className="[&_p]:mb-2 font-light mb-6">
+            <MDContent content={author[0]?.attributes?.bio} />
+          </div>
+        </div>
+
       </div>
 
       <h2 className='font-gordeziani text-3xl font-light'>შრომები</h2>

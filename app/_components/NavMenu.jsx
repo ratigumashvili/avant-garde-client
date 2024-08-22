@@ -4,8 +4,6 @@ import { useState } from 'react'
 
 import Link from 'next/link'
 
-import SidebarAuthors from './SidebarAuthors'
-
 import { navMenu } from '../_lib/constants'
 
 import IconBurger from './icons/IconBurger'
@@ -26,19 +24,9 @@ function NavMenu() {
 
             {menuOpen ? (
                 <div className='min-w-80'>
-                    {navMenu.map(({ id, title, path, children }) => (
-                        <h2 key={id} className="font-gordeziani font-light text-3xl">
-                            {path ? (
-                                <Link href={path}>{title}</Link>
-                            ) : (
-                                <>
-                                    <span>{title}</span>
-                                    {children && (
-                                        <SidebarAuthors />
-                                    )}
-                                </>
-                            )
-                            }
+                    {navMenu.map(({id, path, title}) => (
+                        <h2 key={id} className='font-gordeziani font-light text-3xl mb-3'>
+                            <Link href={`${path}`}>{title}</Link>
                         </h2>
                     ))}
                 </div>

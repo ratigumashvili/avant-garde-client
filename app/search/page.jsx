@@ -21,14 +21,14 @@ async function SearchPage({ searchParams }) {
     return (
         <div className='w-full p-4 flex flex-col'>
             <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <h2 className="font-light">ძიების პარამეტრი: "{searchParams.query}"</h2>
+                <h2 className="font-light">ძიების პარამეტრი: "{searchParams.query}". ნაპოვნია {response.data.length} ჩანაწერი</h2>
             </div>
 
             {!response.data.length && <NothingFound title="არაფერი მოიძებნა. გთხოვთ, სცადოთ სხვა პარამეტრი" />}
 
             <ul className="h-full">
                 {response?.data?.map((work) => (
-                    <li key={work.id} className="my-2">
+                    <li key={work.id} className="my-2 list">
                         <Link href={`/works/${work.id}`}>
                             {work.attributes.title}
                             {work.attributes.authors.data.length !== 0 && work.attributes.authors.data.map((author) => (

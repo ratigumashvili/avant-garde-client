@@ -1,10 +1,10 @@
 import Link from "next/link"
 
-import { getAllManifests } from "../_lib/apiCalls"
+import { getWorksBySlug } from "../_lib/apiCalls"
 
 async function Manifests() {
 
-    const response = await getAllManifests()
+    const response = await getWorksBySlug('maniphesti')
 
     return (
         <div className="p-4">

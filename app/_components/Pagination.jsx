@@ -26,8 +26,9 @@ function Pagination({ currentPage, path, response }) {
         router.replace(path + current, { scroll: false })
     }, [current])
 
+
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-auto">
             {hasPrevPage && (
                 <button onClick={() => handlePaginationClick("prev")} className="flex items-center gap-2">
                   <IconLeft /> წინა
