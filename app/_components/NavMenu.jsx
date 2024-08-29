@@ -23,7 +23,7 @@ function NavMenu() {
             </button>
 
             {menuOpen ? (
-                <div className='min-w-80'>
+                <div className='w-max pr-8'>
                     {navMenu.map(({id, path, title}) => (
                         <h2 key={id} className='font-gordeziani font-light text-3xl mb-3'>
                             <Link href={`${path}`}>{title}</Link>

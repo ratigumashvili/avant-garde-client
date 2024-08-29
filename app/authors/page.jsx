@@ -15,7 +15,7 @@ async function page({ searchParams }) {
     return (
         <div className="p-4 w-full flex flex-col">
             <h2 className="font-gordeziani text-4xl font-light mb-4">ავტორები</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 h-full mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full mb-8">
                 {response?.data?.map((author) => (
                     <Link key={author.id} href={`/authors/${author.attributes.slug}`} className="flex flex-col gap-2 text-center mb-4">
                         {author?.attributes?.photo?.data?.attributes?.url ? (

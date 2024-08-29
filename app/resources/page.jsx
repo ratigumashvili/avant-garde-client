@@ -8,9 +8,9 @@ async function Resources() {
             <h2 className="font-gordeziani text-4xl font-light mb-4">რესურსები</h2>
 
             <ul>
-                {response?.data?.attributes?.resource?.map((res) => (
-                    <li key={res.id} className="list my-2">
-                        <Link href={res.url} target="blank">{res.title}</Link>
+                {response?.data?.attributes?.resource?.map(({id, url, title}) => (
+                    <li key={id} className="list my-2">
+                        <Link href={url} target="blank">{title}</Link>
                     </li>
                 ))}
             </ul>
