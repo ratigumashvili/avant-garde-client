@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 
         <div className="px-4 container container-xl mx-auto">
           <Header />
-          <main className="flex flex-col md:flex-row">
+          <main className="flex">
             <NavMenu />
             {children}
           </main>
