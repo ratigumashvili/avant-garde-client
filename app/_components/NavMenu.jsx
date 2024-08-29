@@ -50,7 +50,7 @@ function NavMobile({ menuOpen, setMenuOpen }) {
     const pathName = usePathname()
 
     const navigate = (path) => {
-        router.replace(path)
+        router.replace(path, { scroll: false })
         setMenuOpen(false)
     }
 
