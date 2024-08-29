@@ -20,6 +20,7 @@ function Header() {
     }
 
     return (
+        <>
         <div className='p-4 flex justify-between border-b flex-col lg:flex-row items-center'>
             <h1 className="font-gordeziani font-light text-5xl md:text-6xl mb-3 md:mb-0 flex items-center gap-4">
               <Image src="/iliauni-logo_eng.png" width={70} height={70} alt="ISU logo" className='grayscale' /> ქართული ფუტურიზმის 100 წელი
@@ -39,6 +40,8 @@ function Header() {
                 </div>
             </form>
         </div>
+        <Image src="/cover.jpg" width={1000} height={200} alt="cover" className='w-full py-4' />
+        </>
     )
 }
 
