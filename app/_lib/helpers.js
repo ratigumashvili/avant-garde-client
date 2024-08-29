@@ -9,3 +9,7 @@ export function removeDuplicates(data){
         ) === i
       )
 }
+
+export function setActive (pathname, actualPath) {
+  return pathname === actualPath ? 'font-normal' : ''
+}

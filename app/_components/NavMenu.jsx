@@ -3,8 +3,9 @@
 import { useState } from "react"
 
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 
+import { setActive } from "../_lib/helpers"
 import { navMenu } from '../_lib/constants'
 
 function NavMenu() {
@@ -33,10 +34,11 @@ function NavMenu() {
 }
 
 function NavDesktop() {
+    const pathName = usePathname()
     return <div className="hidden md:flex md:flex-col gap-4 p-4">
         {navMenu.map(({ id, path, title }) => (
             <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                <Link href={`${path}`}>{title}</Link>
+                <Link href={`${path}`} className={`${setActive(pathName, path)} relative`}>{title}</Link>
             </h2>
         ))}
     </div>
@@ -45,6 +47,7 @@ function NavDesktop() {
 function NavMobile({ menuOpen, setMenuOpen }) {
 
     const router = useRouter()
+    const pathName = usePathname()
 
     const navigate = (path) => {
         router.replace(path)
@@ -55,11 +58,13 @@ function NavMobile({ menuOpen, setMenuOpen }) {
         <div className={`${menuOpen ? 'w-screen min-h-screen opacity-100 p-4 pr-8 flex flex-col gap-4 bg-white transition-opacity ease-in duration-100' : 'opacity-0 h-0 overflow-hidden'}`}>
             {navMenu.map(({ id, path, title }) => (
                 <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                    <button onClick={() => navigate(`${path}`)}>{title}</button>
+                    <button onClick={() => navigate(`${path}`)} className={`${setActive(pathName, path)} relative`}>{title}</button>
                 </h2>
             ))}
         </div>
     </div>
 }
+
+
 
 export default NavMenu
