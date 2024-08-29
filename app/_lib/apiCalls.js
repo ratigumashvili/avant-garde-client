@@ -1,6 +1,6 @@
 const { default: axios } = require("axios")
 
-const apiUrl = 'http://localhost:1337/api'
+const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 export const getSinglePage = (slug) => axios.get(`${apiUrl}/${slug}`).then((resp) => resp.data)
 
