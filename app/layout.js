@@ -2,7 +2,6 @@
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import NavMenu from "./_components/NavMenu";
-import SidebarNew from "./_components/SidebarNew";
 
 import { firaGo, gordeziani } from "./_lib/fonts";
 
