@@ -52,7 +52,7 @@ function Filters() {
 
     return (
         <div>
-            <button onClick={() => setIsOpen(true)}>
+            <button onClick={() => setIsOpen(true)} title="ფილტრი">
                 <IconFilter />
             </button>
 

@@ -25,7 +25,9 @@ async function AllWorks({ searchParams }) {
 
       <div className="flex items-start justify-between">
         <h2 className="font-gordeziani text-4xl font-light mb-4">ნამუშევრები</h2>
-        <Filters />
+        <div className="pt-1">
+          <Filters />
+        </div>
       </div>
 
       <ul className="h-full">
@@ -33,7 +35,7 @@ async function AllWorks({ searchParams }) {
           <li key={work.id} className="my-2 list">
             <Link href={`/works/${work.id}`}>
               {work?.attributes?.authors?.data?.map((author, index) => (
-                <p key={author.id}>{author.attributes.name}{separate(work?.attributes?.authors?.data, index)} </p>
+                <span key={author.id}>{author.attributes.name}{separate(work?.attributes?.authors?.data, index)} </span>
               ))}
               <em>{work?.attributes?.title}</em>
             </Link>

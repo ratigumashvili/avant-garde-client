@@ -15,5 +15,5 @@ export function setActive (pathname, actualPath) {
 }
 
 export const separate = (array, index) => {
-  return index + 1 === array.length ? "" : ", ";
+  return index + 1 === array.length ? " - " : ", ";
 };

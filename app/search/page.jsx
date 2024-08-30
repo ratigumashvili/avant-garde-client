@@ -7,6 +7,7 @@ import NothingFound from "../_components/NothingFound"
 import Pagination from "../_components/Pagination"
 
 import { PER_PAGE } from "@/app/_lib/constants"
+import { separate } from "../_lib/helpers"
 
 async function SearchPage({ searchParams }) {
 
@@ -30,10 +31,10 @@ async function SearchPage({ searchParams }) {
                 {response?.data?.map((work) => (
                     <li key={work.id} className="my-2 list">
                         <Link href={`/works/${work.id}`}>
-                            {work.attributes.title}
-                            {work.attributes.authors.data.length !== 0 && work.attributes.authors.data.map((author) => (
-                                <em key={author.id}>, {author.attributes.name}</em>
+                            {work.attributes.authors.data.length !== 0 && work.attributes.authors.data.map((author, index) => (
+                                <span key={author.id}> {author.attributes.name}{separate(work?.attributes?.authors?.data, index)}</span>
                             ))}
+                            <em>{work.attributes.title}</em>
                         </Link>
                     </li>
                 ))}
