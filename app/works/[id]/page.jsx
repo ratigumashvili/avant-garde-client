@@ -12,7 +12,6 @@ async function page({ params }) {
 
     return (
         <div className="p-4 w-full">
-
             <ContentHeader
                 author={response?.data?.attributes?.authors?.data[0]?.attributes?.name}
                 title={response?.data?.attributes?.title}

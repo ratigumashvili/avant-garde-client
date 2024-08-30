@@ -21,7 +21,9 @@ export default function RootLayout({ children }) {
           <Header />
           <main className="flex">
             <NavMenu />
-            {children}
+            <div className="flex flex-1">
+              {children}
+            </div>
           </main>
         </div>
         <Footer />

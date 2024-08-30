@@ -20,13 +20,13 @@ async function page({ params, searchParams }) {
     }
 
     return (
-        <div className='p-4 w-full flex flex-col'>
+        <div className='p-4 flex flex-col flex-1'>
 
             <ContentHeader
                 author={response?.data[0]?.attributes?.authors?.data[0]?.attributes?.name}
             />
 
-            <ul className='h-full'>
+            <ul className='h-full w-full'>
                 {response?.data?.length && response.data.map((work) => (
                     <li key={work.id} className='my-2 list'>
                         <Link href={`/works/${work.id}`}>{work.attributes.title}</Link>
@@ -39,7 +39,6 @@ async function page({ params, searchParams }) {
                 currentPage={currentPage}
                 response={response}
             />
-
 
         </div>
     )

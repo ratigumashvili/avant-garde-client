@@ -16,7 +16,7 @@ export async function generateMetadata ({params}) {
 
 function SingleWorkLayout({children}) {
   return (
-    <div>{children}</div>
+    <>{children}</>
   )
 }
 
