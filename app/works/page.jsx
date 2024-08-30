@@ -5,7 +5,10 @@ import { getAllWorks } from "../_lib/apiCalls"
 import Pagination from "../_components/Pagination"
 
 import { PER_PAGE } from "@/app/_lib/constants"
+import { separate } from "../_lib/helpers"
+
 import NothingFound from "../_components/NothingFound"
+import Filters from "../_components/Filters"
 
 async function AllWorks({ searchParams }) {
 
@@ -13,23 +16,26 @@ async function AllWorks({ searchParams }) {
 
   const response = await getAllWorks(`pagination[page]=${currentPage}&pagination[pageSize]=${PER_PAGE}`)
 
-  if(response.data.length === 0){
+  if (response.data.length === 0) {
     return <NothingFound />
   }
 
   return (
     <div className='w-full p-4 flex flex-col'>
 
-      <h2 className="font-gordeziani text-4xl font-light mb-4">ნამუშევრები</h2>
+      <div className="flex items-start justify-between">
+        <h2 className="font-gordeziani text-4xl font-light mb-4">ნამუშევრები</h2>
+        <Filters />
+      </div>
 
       <ul className="h-full">
         {response?.data.map((work) => (
           <li key={work.id} className="my-2 list">
             <Link href={`/works/${work.id}`}>
-              {work?.attributes?.authors?.data?.map((author) => (
-                <em key={author.id}>{author.attributes.name} // </em>
+              {work?.attributes?.authors?.data?.map((author, index) => (
+                <p key={author.id}>{author.attributes.name}{separate(work?.attributes?.authors?.data, index)} </p>
               ))}
-              {work?.attributes?.title}
+              <em>{work?.attributes?.title}</em>
             </Link>
           </li>
         ))}

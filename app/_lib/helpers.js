@@ -13,3 +13,7 @@ export function removeDuplicates(data){
 export function setActive (pathname, actualPath) {
   return pathname === actualPath ? 'font-normal' : ''
 }
+
+export const separate = (array, index) => {
+  return index + 1 === array.length ? "" : ", ";
+};
