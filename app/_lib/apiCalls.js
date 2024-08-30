@@ -24,4 +24,6 @@ export const getManifestById = (id) => axios.get(`${apiUrl}/works/${id}?populate
 
 export const getNoAuthorWork = (params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=uavtoro&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
+export const getVariousCategories = () => axios.get(`${apiUrl}/categories?filters[$and][0][isVarious][$eq]=true`).then((resp) => resp.data).catch((error) => error.message)
+
 export const getWorkByVarious = (slug, params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${slug}&populate=*&${params}`).catch((error) => error.message)
