@@ -6,7 +6,10 @@ export async function generateMetadata ({params}) {
     return {
         title: response?.data?.attributes?.seo?.metaTitle,
         description: response?.data?.attributes?.seo?.metaDescription,
-        keywords: response?.data?.attributes?.seo?.metaKeywords
+        keywords: response?.data?.attributes?.seo?.metaKeywords,
+        openGraph: {
+            images: response?.data?.attributes?.seo?.metaImage?.data?.attributes?.url
+        }
     }
 }
 

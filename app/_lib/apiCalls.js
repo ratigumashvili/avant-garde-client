@@ -38,4 +38,4 @@ export const getFilteredCategory = (category, params) => axios.get(`${apiUrl}/wo
 
 export const generateMetaAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$eq]=${slug}&populate[0]=seo&populate[1]=seo.metaImage`).then((resp) => resp.data).catch((error) => error.message)
 
-export const generateMetaWork = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=seo`).then((resp) => resp.data).catch((error) => error.message)
+export const generateMetaWork = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=seo&populate[1]=seo.metaImage`).then((resp) => resp.data).catch((error) => error.message)
