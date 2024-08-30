@@ -18,9 +18,7 @@ async function page({ params }) {
                 title={response?.data?.attributes?.title}
             />
 
-            <div className="[&_p]:mb-2 font-light mb-4">
-                <MDContent content={response?.data?.attributes?.content} />
-            </div>
+            <MDContent content={response?.data?.attributes?.content} />
 
             {response?.data?.attributes?.images?.data && (
                 <ImageGallery images={response?.data?.attributes?.images?.data} />

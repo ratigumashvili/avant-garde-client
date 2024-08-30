@@ -7,7 +7,7 @@ async function Home() {
   const response = await getSinglePage('home')
 
   return (
-    <div className="p-4 [&_p]:leading-7 [&_p]:mb-4 font-light">
+    <div className="p-4">
       <MDContent content={response?.data?.attributes?.content} />
     </div>
   )

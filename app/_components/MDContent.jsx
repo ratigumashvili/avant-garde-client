@@ -2,11 +2,9 @@
 
 import ReactMarkdown from 'react-markdown'
 
-function MDContent({content}) {
+function MDContent({ content }) {
   return (
-    <div>
-        <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
+    <ReactMarkdown>{content}</ReactMarkdown>
   )
 }
 

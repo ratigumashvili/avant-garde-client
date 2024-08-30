@@ -43,7 +43,7 @@ async function page({ params }) {
 
           <h3 className='mb-4'>{author[0]?.attributes?.dates}</h3>
 
-          <div className="[&_p]:mb-2 font-light mb-6">
+          <div className="mb-6">
             <MDContent content={author[0]?.attributes?.bio} />
           </div>
         </div>
