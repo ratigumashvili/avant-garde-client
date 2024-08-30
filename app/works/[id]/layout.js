@@ -1,6 +1,7 @@
 import { generateMetaWork } from "@/app/_lib/apiCalls"
 
 export async function generateMetadata ({params}) {
+    
     const response = await generateMetaWork(params.id)
 
     return {
