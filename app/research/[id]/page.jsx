@@ -5,6 +5,7 @@ import { getWorkById } from "@/app/_lib/apiCalls"
 async function SingleResearch({ params }) {
 
     const response = await getWorkById(params.id)
+    
     return (
         <div className="p-4 w-full">
             

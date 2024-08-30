@@ -2,7 +2,9 @@ import Link from "next/link"
 import { getSinglePage } from "../_lib/apiCalls"
 
 async function Resources() {
+
     const response = await getSinglePage('resource?populate=*')
+    
     return (
         <div className="p-4 w-full">
             <h2 className="font-gordeziani text-4xl font-light mb-4">რესურსები</h2>
