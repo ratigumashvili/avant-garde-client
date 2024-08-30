@@ -1,8 +1,7 @@
-import { getAllWorks, getFilteredCategory, getFilteredWorks, getWorkByAuthor } from "../_lib/apiCalls"
-
 import Link from "next/link"
 
-import ContentHeader from "../_components/ContentHeader"
+import { getAllWorks, getFilteredCategory, getFilteredWorks, getWorkByAuthor } from "../_lib/apiCalls"
+
 import Pagination from "../_components/Pagination"
 import NothingFound from "../_components/NothingFound"
 import Filters from "../_components/Filters"
@@ -36,15 +35,10 @@ async function Filtered({ searchParams }) {
         <div className="w-full p-4 flex flex-col">
 
             <div className="flex items-center justify-between gap-2">
-                <div className="flex-1">
-                    <ContentHeader title="ფილტრის შედეგები" />
-                </div>
-                <div className="h-full flex items-center pb-2">
-                    <Filters />
-                </div>
+                <h2 className="font-gordeziani text-4xl font-light mb-4">ფილტრის შედეგები</h2>
+                <Filters />
             </div>
-
-
+            
             <div className="h-full">
 
                 {response?.data?.length === 0 && <NothingFound title="არაფერი მოიძებნა. გთხოვთ, სცადოთ სხვა პარამეტრები" />}
