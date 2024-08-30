@@ -12,8 +12,6 @@ export const getAllWorks = (params) => axios.get(`${apiUrl}/works?populate[0]=au
 
 export const getWorkByCategory = (author, category, params) => axios.get(`${apiUrl}/works?filters[$and][0][authors][slug][$eq]=${author}&filters[$and][1][category][slug][$eq]=${category}&populate=*&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
-export const getFilteredCategory = (category, params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${category}&populate[0]=authors&${params}`).then((resp) => resp.data).catch((error) => error.message)
-
 export const getWorkById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=authors&populate[1]=images`).then((resp) => resp.data).catch((err) => console.log(err)).catch((error) => error.message)
 
 export const getWorkByTitle = (title, params) => axios.get(`${apiUrl}/works?filters[$and][0][title][$contains]=${title}&populate=*&${params}`).then((resp) => resp.data).catch((error) => error.message)
@@ -35,3 +33,5 @@ export const getWorkByVarious = (slug, params) => axios.get(`${apiUrl}/works?fil
 export const getAllCategories = () => axios.get(`${apiUrl}/categories`).then((resp) => resp.data).catch((error) => error.message)
 
 export const getFilteredWorks = (category, author, params) => axios.get(`${apiUrl}/works?filters[$and][0][authors][slug][$eq]=${author}&filters[$and][1][category][slug][$eq]=${category}&populate[0]=authors&${params}`).then((resp) => resp.data).catch((error) => error.message)
+
+export const getFilteredCategory = (category, params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${category}&populate[0]=authors&${params}`).then((resp) => resp.data).catch((error) => error.message)
