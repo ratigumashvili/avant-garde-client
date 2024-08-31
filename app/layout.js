@@ -3,14 +3,27 @@ import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import NavMenu from "./_components/NavMenu";
 
+import { generateMetaGlobal } from "./_lib/apiCalls";
+
 import { firaGo, gordeziani } from "./_lib/fonts";
 
 import "./globals.css";
 
-export const metadata = {
-  title: "ქართული ფუტურიზმის 100 წელი",
-  description: "ეძღვნება ქართველი ავანგარდისტების (ფუტურისტების და დადაისტების) ლიტერატურულ ასპარეზზე გამოსვლის ასი წლის იუბილეს.",
-};
+export async function generateMetadata() {
+  const response = await generateMetaGlobal()
+
+  return {
+    title: response?.data?.attributes?.seo?.metaTitle,
+    description: response?.data?.attributes?.seo?.metaDescription,
+    keywords: response?.data?.attributes?.seo?.metaKeywords,
+    openGraph: {
+      images: response?.data?.attributes?.seo?.metaImage?.data?.attributes?.url
+    },
+    icons: {
+      icon: './favicon.ico',
+    },
+  }
+}
 
 export default function RootLayout({ children }) {
   return (
