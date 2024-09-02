@@ -3,9 +3,10 @@
 import { useState } from 'react'
 
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import IconSearch from './icons/IconSearch'
-import Image from 'next/image'
 
 function Header() {
 
@@ -23,7 +24,8 @@ function Header() {
         <>
         <div className='p-4 flex justify-between border-b flex-col lg:flex-row items-center'>
             <h1 className="font-gordeziani font-light text-5xl md:text-6xl mb-3 md:mb-0 flex items-center gap-4">
-              <Image src="/iliauni-logo_eng.png" width={70} height={70} alt="ISU logo" className='grayscale' /> ქართული ფუტურიზმის 100 წელი
+              <Image src="/iliauni-logo_eng.png" width={70} height={70} alt="ISU logo" className='grayscale' /> 
+              <Link href={'/'}>ქართული ფუტურიზმის 100 წელი</Link> 
             </h1>
             <form onSubmit={handleFormSubmit}>
                 <div className='flex items-center gap-2'>
