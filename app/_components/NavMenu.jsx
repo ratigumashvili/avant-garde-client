@@ -14,7 +14,7 @@ function NavMenu() {
     const toggleMenu = () => setMenuOpen((prev) => !prev)
 
     return (
-        <div className="flex justify-start items-start gap-2 w-[30px] md:w-max">
+        <nav className="flex justify-start items-start gap-2 w-[30px] md:w-max pb-8">
             <button className="md:hidden mt-8 text-black w-15 h-15 ml-3 relative focus:outline-none bg-white z-20" onClick={toggleMenu}>
                 <span className="sr-only">Open main menu</span>
                 <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -29,7 +29,7 @@ function NavMenu() {
                 <NavMobile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             </div>
 
-        </div>
+        </nav>
     )
 }
 
