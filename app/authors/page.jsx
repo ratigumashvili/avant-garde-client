@@ -5,12 +5,15 @@ import Link from "next/link"
 
 import { PER_PAGE } from "@/app/_lib/constants"
 import Pagination from "../_components/Pagination"
+import NothingFound from "../_components/NothingFound"
 
 async function page({ searchParams }) {
 
     const currentPage = Number(searchParams.page || 1)
 
     const response = await getAllAuthors(`pagination[page]=${currentPage}&pagination[pageSize]=${PER_PAGE}`)
+
+    if (!response.data.length) return <NothingFound />
 
     return (
         <div className="p-4 w-full flex flex-col">

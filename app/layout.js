@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
 
         <div className="px-4 container container-xl mx-auto">
           <Header />
-          <main className="flex">
+          <main className="flex pb-8">
             <NavMenu />
             <div className="flex flex-1">
               {children}
