@@ -1,8 +1,10 @@
+import { getWorkById } from "@/app/_lib/apiCalls"
+
+import MDContent from "@/app/_components/MDContent"
+
 import ContentHeader from "@/app/_components/ContentHeader"
 import ImageGallery from "@/app/_components/ImageGallery"
-import MDContent from "@/app/_components/MDContent"
 import NothingFound from "@/app/_components/NothingFound"
-import { getWorkById } from "@/app/_lib/apiCalls"
 
 async function page({ params }) {
 
