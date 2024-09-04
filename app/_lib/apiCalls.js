@@ -41,3 +41,5 @@ export const generateMetaAuthor = (slug) => axios.get(`${apiUrl}/authors?filters
 export const generateMetaWork = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=seo&populate[1]=seo.metaImage`).then((resp) => resp.data).catch((error) => error.message)
 
 export const generateMetaGlobal = () => axios.get(`${apiUrl}/home?populate[0]=seo&populate[1]=seo.metaImage`).then((resp) => resp.data).catch((error) => error.message)
+
+export const getHeaderImage = () => axios.get(`${apiUrl}/home?populate[0]=header`).then((resp) => resp.data).catch((error) => error.message)

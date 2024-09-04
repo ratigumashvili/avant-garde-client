@@ -3,7 +3,7 @@ import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import NavMenu from "./_components/NavMenu";
 
-import { generateMetaGlobal } from "./_lib/apiCalls";
+import { generateMetaGlobal, getHeaderImage } from "./_lib/apiCalls";
 
 import { firaGo, gordeziani } from "./_lib/fonts";
 
@@ -25,13 +25,15 @@ export async function generateMetadata() {
   }
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  
+  const header = await getHeaderImage()
+
   return (
     <html lang="en">
       <body className={`${firaGo.variable} ${gordeziani.variable} font-firaGo font-light flex flex-col h-screen`}>
-
         <div className="px-4 container container-xl mx-auto">
-          <Header />
+          <Header image={header?.data} />
           <main className="flex pb-8">
             <NavMenu />
             <div className="flex flex-1">
