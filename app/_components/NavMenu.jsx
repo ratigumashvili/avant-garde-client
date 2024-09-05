@@ -5,8 +5,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 
+
 import { setActive } from "../_lib/helpers"
 import { navMenu } from '../_lib/constants'
+import EngModal from "./EngModal"
 
 function NavMenu() {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -41,6 +43,7 @@ function NavDesktop() {
                 <Link href={`${path}`} className={`${setActive(pathName, path)} relative`}>{title}</Link>
             </h2>
         ))}
+        <EngModal />
     </div>
 }
 
@@ -61,6 +64,7 @@ function NavMobile({ menuOpen, setMenuOpen }) {
                     <button onClick={() => navigate(`${path}`)} className={`${setActive(pathName, path)} relative`}>{title}</button>
                 </h2>
             ))}
+            <EngModal />
         </div>
     </div>
 }
