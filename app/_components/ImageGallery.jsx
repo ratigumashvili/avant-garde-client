@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 function ImageGallery({ images }) {
@@ -11,7 +12,6 @@ function ImageGallery({ images }) {
     const [index, setIndex] = useState(-1);
 
     const handleClick = (index, item) => setIndex(index);
-
 
     const slides = images.map((image) => (
         {
@@ -31,6 +31,7 @@ function ImageGallery({ images }) {
                 slides={slides}
                 open={index >= 0}
                 index={index}
+                plugins={[Zoom]}
                 close={() => setIndex(-1)}
             />
         </div>
