@@ -49,7 +49,7 @@ function EngModal() {
 
                             <div className='flex items-center justify-between flex-col md:flex-row gap-4 pt-8 border-t'>
                                 <div className="flex items-center gap-2">
-                                    <Link href={"https://iliauni.edu.ge/ge"} target="blank">
+                                    <Link href={"https://iliauni.edu.ge/en"} target="blank">
                                         <Image src="/iliauni-logo_eng.png" width={50} height={50} alt="ISU logo" className="grayscale" />
                                     </Link>
                                     <Link href={'mailto:dh@iliauni.edu.ge'}>

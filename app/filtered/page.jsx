@@ -48,7 +48,7 @@ async function Filtered({ searchParams }) {
                         <li key={item.id} className="my-2 list">
                             <Link href={`/works/${item.id}`}>
                                 {item?.attributes?.authors?.data?.map((author, index) => (
-                                    <p key={author.id}>{author.attributes.name}{separate(item?.attributes?.authors?.data, index)} </p>
+                                    <span key={author.id}>{author.attributes.name}{separate(item?.attributes?.authors?.data, index)}</span>
                                 ))}
                                 <em>{item?.attributes?.title}</em>
                             </Link>
