@@ -6,7 +6,7 @@ import ContentHeader from "@/app/_components/ContentHeader"
 import ImageGallery from "@/app/_components/ImageGallery"
 import NothingFound from "@/app/_components/NothingFound"
 
-async function page({ params }) {
+async function SingleWork({ params }) {
 
     const response = await getWorkById(params.id)
 
@@ -29,4 +29,4 @@ async function page({ params }) {
     )
 }
 
-export default page
+export default SingleWork

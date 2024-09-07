@@ -9,7 +9,7 @@ import Pagination from "@/app/_components/Pagination"
 import { PER_PAGE } from "@/app/_lib/constants"
 
 
-async function page({ params, searchParams }) {
+async function SingleVarious({ params, searchParams }) {
 
     const currentPage = Number(searchParams.page || 1)
 
@@ -43,4 +43,4 @@ async function page({ params, searchParams }) {
     )
 }
 
-export default page
+export default SingleVarious

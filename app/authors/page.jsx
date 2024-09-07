@@ -7,7 +7,7 @@ import { PER_PAGE } from "@/app/_lib/constants"
 import Pagination from "../_components/Pagination"
 import NothingFound from "../_components/NothingFound"
 
-async function page({ searchParams }) {
+async function Authors({ searchParams }) {
 
     const currentPage = Number(searchParams.page || 1)
 
@@ -41,4 +41,4 @@ async function page({ searchParams }) {
     )
 }
 
-export default page
+export default Authors
