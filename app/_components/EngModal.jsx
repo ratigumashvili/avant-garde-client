@@ -43,7 +43,7 @@ function EngModal() {
                                 <IconClose width='32' height='32' />
                             </button>
 
-                            <DialogTitle className="font-gordeziani font-light text-3xl">{data?.attributes?.title}</DialogTitle>
+                            <DialogTitle className="font-gordeziani font-light text-5xl">{data?.attributes?.title}</DialogTitle>
 
                             <MDContent content={data?.attributes?.content} />
 
