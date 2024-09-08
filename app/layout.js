@@ -20,7 +20,7 @@ export async function generateMetadata() {
       images: response?.data?.attributes?.seo?.metaImage?.data?.attributes?.url
     },
     icons: {
-      icon: './favicon.ico',
+      icon: '/favicon.ico',
     },
   }
 }
