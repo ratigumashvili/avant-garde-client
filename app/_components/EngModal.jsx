@@ -27,7 +27,7 @@ function EngModal() {
 
     return (
         <>
-            {data && <button onClick={() => setIsOpen(true)} className='w-max'>
+            {data?.attributes?.content && <button onClick={() => setIsOpen(true)} className='w-max'>
                 <h2 className='font-gordeziani font-light text-3xl'>
                     ENG
                 </h2>
