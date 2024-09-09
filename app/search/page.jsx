@@ -22,7 +22,7 @@ async function SearchPage({ searchParams }) {
     return (
         <div className='w-full p-4 flex flex-col'>
             <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <h2 className="font-light">ძიების პარამეტრი: "{searchParams.query}". ნაპოვნია {response.data.length} ჩანაწერი</h2>
+                <h2 className="font-light">ძიების პარამეტრი: `&#34;`{searchParams.query}`&#34;`. ნაპოვნია {response.data.length} ჩანაწერი</h2>
             </div>
 
             {!response.data.length && <NothingFound title="არაფერი მოიძებნა. გთხოვთ, სცადოთ სხვა პარამეტრი" />}
