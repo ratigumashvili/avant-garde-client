@@ -35,7 +35,7 @@ function EngModal() {
             <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
                 <div className="fixed inset-0 w-screen overflow-y-auto p-4 bg-black/50">
                     <div className="flex min-h-full items-center justify-center">
-                        <DialogPanel className="w-full space-y-4 border bg-white p-12">
+                        <DialogPanel className="w-full space-y-4 border bg-white p-12 relative">
 
                             <button
                                 onClick={() => setIsOpen(false)}

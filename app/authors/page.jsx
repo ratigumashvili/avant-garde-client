@@ -13,7 +13,7 @@ async function Authors({ searchParams }) {
 
     const response = await getAllAuthors(`pagination[page]=${currentPage}&pagination[pageSize]=${PER_PAGE}`)
 
-    if (!response.data.length) return <NothingFound />
+    if (!response?.data?.length) return <NothingFound />
 
     return (
         <div className="p-4 w-full flex flex-col">
