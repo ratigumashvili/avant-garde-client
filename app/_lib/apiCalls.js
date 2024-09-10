@@ -4,9 +4,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 export const getSinglePage = (slug) => axios.get(`${apiUrl}/${slug}`).then((resp) => resp.data).catch((error) => error.message)
 
-export const getAllAuthors = (params) => axios.get(`${apiUrl}/authors?populate[0]=photo&${params}`).then((resp) => resp.data).catch((error) => error.message)
+export const getAllAuthors = (params) => axios.get(`${apiUrl}/authors?populate[photo][fields][0]=url&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
-export const getAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$eq]=${slug}&populate[0]=works&populate[1]=works.category&populate[2]=photo`).then((resp) => resp.data).catch((error) => error.message)
+export const getAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$eq]=${slug}&populate[photo][fields][0]=url&populate[works][fields][0]=title&populate[works][populate][category][fields][0]=title&populate[works][populate][category][fields][1]=slug`).then((resp) => resp.data).catch((error) => error.message)
 
 export const getAllWorks = (params) => axios.get(`${apiUrl}/works?populate[0]=authors&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
