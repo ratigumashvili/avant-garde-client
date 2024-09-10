@@ -19,7 +19,6 @@ async function SingleManifest({ params }) {
                 <MDContent content={response?.data?.attributes?.content} />
             </div>
             {response?.data?.attributes?.authors?.data?.length !== 0 && (
-
                 <>
                     <h2 className="font-gordeziani text-4xl font-light mb-4">ავტორი</h2>
 
@@ -31,7 +30,6 @@ async function SingleManifest({ params }) {
                         ))}
                     </ul>
                 </>
-
             )}
 
         </div>

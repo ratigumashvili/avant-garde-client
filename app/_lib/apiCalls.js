@@ -22,7 +22,7 @@ export const getWorkByAuthor = (author, params) => axios.get(`${apiUrl}/works?fi
 
 export const getSingleManifest = (slug) => axios.get(`${apiUrl}/manifests?filters[$and][0][slug][$eq]=${slug}&populate=*`).then((resp) => resp.data).catch((error) => error.message)
 
-export const getManifestById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=authors`).then((resp) => resp.data).catch((error) => error.message)
+export const getManifestById = (id) => axios.get(`${apiUrl}/works/${id}?populate[authors][fields][0]=name&populate[authors][fields][1]=slug`).then((resp) => resp.data).catch((error) => error.message)
 
 export const getNoAuthorWork = (params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=uavtoro&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
