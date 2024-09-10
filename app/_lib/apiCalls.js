@@ -10,7 +10,7 @@ export const getAuthor = (slug) => axios.get(`${apiUrl}/authors?filters[slug][$e
 
 export const getAllWorks = (params) => axios.get(`${apiUrl}/works?populate[0]=authors&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
-export const getWorkByCategory = (author, category, params) => axios.get(`${apiUrl}/works?filters[$and][0][authors][slug][$eq]=${author}&filters[$and][1][category][slug][$eq]=${category}&populate=*&${params}`).then((resp) => resp.data).catch((error) => error.message)
+export const getWorkByCategory = (author, category, params) => axios.get(`${apiUrl}/works?filters[$and][0][authors][slug][$eq]=${author}&filters[$and][1][category][slug][$eq]=${category}&populate[fields][0]=title&populate[authors][fields][0]=name&populate[authors][fields][1]=slug&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
 export const getWorkById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=authors&populate[1]=images`).then((resp) => resp.data).catch((error) => error.message)
 
