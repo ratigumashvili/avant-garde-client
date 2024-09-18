@@ -17,7 +17,7 @@ async function Research({searchParams}) {
             <h2 className="font-gordeziani text-4xl font-light mb-4">კვლევები</h2>
 
             <ul className="h-full">
-                {response?.data?.data?.map((research) => (
+                {response?.data?.map((research) => (
                     <li key={research.id} className="my-2 list">
                         <Link href={`/research/${research.id}`}>
                             {research.attributes.title}
