@@ -21,7 +21,7 @@ function Header({ image }) {
     }
 
     return (
-        <>
+        <div className='mb-6'>
             <div className='p-4 flex justify-between border-b flex-col lg:flex-row items-center'>
                 <h1 className="font-gordeziani font-light text-5xl md:text-6xl mb-3 md:mb-0 flex items-center text-center sm:text-left gap-4">
                     <Image
@@ -49,7 +49,7 @@ function Header({ image }) {
                 height={200}
                 alt="cover"
                 className='w-full py-4' />
-        </>
+        </div>
     )
 }
 
