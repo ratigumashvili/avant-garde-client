@@ -2,11 +2,9 @@ const { default: axios } = require("axios")
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
-// export const getSinglePage = (slug) => axios.get(`${apiUrl}/${slug}`).then((resp) => resp.data).catch((error) => error.message)
-
 export const getSinglePage = async (slug) => {
     try {
-        const request = await fetch(`${apiUrl}/${slug}`, { cache: 'no-store' })
+        const request = await fetch(`${apiUrl}/${slug}`, { next: { revalidate: 0 } })
         const response = await request.json()
         return response
     } catch (error) {
@@ -26,11 +24,9 @@ export const getWorkById = (id) => axios.get(`${apiUrl}/works/${id}?populate[0]=
 
 export const getWorkByTitle = (title, params) => axios.get(`${apiUrl}/works?filters[$and][0][title][$contains]=${title}&populate=*&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
-// export const getWorksBySlug = (slug, params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${slug}&${params}`).catch((error) => error.message)
-
 export const getWorksBySlug = async (slug, params) => {
     try {
-        const request = await fetch(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${slug}&[fields][0]=title&${params}`, { cache: 'no-store' })
+        const request = await fetch(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=${slug}&[fields][0]=title&${params}`, { next: { revalidate: 0 } })
         const response = await request.json()
         return response
     } catch (error) {
@@ -46,11 +42,9 @@ export const getManifestById = (id) => axios.get(`${apiUrl}/works/${id}?populate
 
 export const getNoAuthorWork = (params) => axios.get(`${apiUrl}/works?filters[$and][0][category][slug][$eq]=uavtoro&${params}`).then((resp) => resp.data).catch((error) => error.message)
 
-// export const getVariousCategories = () => axios.get(`${apiUrl}/categories?filters[$and][0][isVarious][$eq]=true`).then((resp) => resp.data).catch((error) => error.message)
-
 export const getVariousCategories = async () => {
     try {
-        const request = await fetch(`${apiUrl}/categories?filters[$and][0][isVarious][$eq]=true`, { cache: 'no-store' })
+        const request = await fetch(`${apiUrl}/categories?filters[$and][0][isVarious][$eq]=true`, { next: { revalidate: 0 } })
         const response = await request.json()
         return response
     } catch (error) {
