@@ -30,7 +30,7 @@ export default async function RootLayout({ children }) {
   const header = await getHeaderImage()
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={`${firaGo.variable} ${gordeziani.variable} font-firaGo font-light flex flex-col h-screen`}>
         <div className="px-4 container container-xl mx-auto">
           <Header image={header?.data} />

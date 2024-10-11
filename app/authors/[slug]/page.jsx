@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { getAuthor } from '@/app/_lib/apiCalls'
 import { removeDuplicates } from '@/app/_lib/helpers'
+
 import MDContent from '@/app/_components/MDContent'
 import ContentHeader from '@/app/_components/ContentHeader'
-import Image from 'next/image'
+import ScrollTop from '@/app/_components/ScrollTop'
 
 async function page({ params }) {
   const { data: author } = await getAuthor(params.slug)
@@ -15,7 +17,12 @@ async function page({ params }) {
     </h2>
   }
 
-  const categories = author[0]?.attributes?.works?.data?.map((work) => ({ title: work?.attributes?.category?.data?.attributes?.title, category: work?.attributes?.category?.data?.attributes?.slug }))
+  const categories = author[0]?.attributes?.works?.data?.map((work) => {
+    return { 
+      title: work?.attributes?.category?.data?.attributes?.title, 
+      category: work?.attributes?.category?.data?.attributes?.slug 
+    }
+  })
 
   const filteredCategories = removeDuplicates(categories)
 
@@ -43,22 +50,26 @@ async function page({ params }) {
 
           <h3 className='mb-4'>{author[0]?.attributes?.dates}</h3>
 
-          <div className="mb-6">
-            <MDContent content={author[0]?.attributes?.bio} />
-          </div>
+          <ul className='mt-2'>
+            {filteredCategories.map((cat, index) => (
+              <li key={index} className='mb-2 list'>
+                <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
+              </li>
+            ))}
+            <li className='list'>
+              <Link href={'#bio'} scroll={true}>ბიოგრაფია</Link>
+            </li>
+          </ul>
+
         </div>
 
       </div>
 
-      <h2 className='font-gordeziani text-3xl font-light'>შრომები</h2>
+      <div className="mb-6 mt-12" id='bio'>
+        <MDContent content={author[0]?.attributes?.bio} />
+      </div>
 
-      <ul className='mt-2'>
-        {filteredCategories.map((cat, index) => (
-          <li key={index} className='mb-2 list'>
-            <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <ScrollTop />
 
     </div>
   )
