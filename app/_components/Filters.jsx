@@ -56,7 +56,7 @@ function Filters() {
                 <IconFilter />
             </button>
 
-            <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+            <Dialog open={isOpen} transition onClose={() => setIsOpen(false)} className="relative z-50 transition duration-300 ease-out data-[closed]:opacity-0">
                 <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
                     <DialogPanel className="max-w-xl border bg-white p-4 relative">
                         <button onClick={() => setIsOpen(false)} className="absolute top-2 right-2" >
