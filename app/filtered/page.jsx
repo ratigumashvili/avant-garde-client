@@ -39,7 +39,7 @@ async function Filtered({ searchParams }) {
                 <Filters />
             </div>
             
-            <div className="h-full">
+            <div className="h-full mb-8">
 
                 {response?.data?.length === 0 && <NothingFound title="არაფერი მოიძებნა. გთხოვთ, სცადოთ სხვა პარამეტრები" />}
 
