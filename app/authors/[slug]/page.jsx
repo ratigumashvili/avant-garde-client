@@ -7,13 +7,14 @@ import { removeDuplicates } from '@/app/_lib/helpers'
 import MDContent from '@/app/_components/MDContent'
 import ContentHeader from '@/app/_components/ContentHeader'
 import ScrollTop from '@/app/_components/ScrollTop'
+import NothingFound from '@/app/_components/NothingFound'
 
 async function page({ params }) {
   const { data: author } = await getAuthor(params.slug)
 
   if (!author.length) {
     return <h2 className='font-gordeziani text-2xl font-light p-4'>
-      არაფერი მოიძებნა
+      <NothingFound />
     </h2>
   }
 
