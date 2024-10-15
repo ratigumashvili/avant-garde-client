@@ -30,7 +30,7 @@ async function AllWorks({ searchParams }) {
         </div>
       </div>
 
-      <ul className="h-full">
+      <ul className="h-full mb-8">
         {response?.data.map((work) => (
           <li key={work.id} className="my-2 list">
             <Link href={`/works/${work.id}`}>
