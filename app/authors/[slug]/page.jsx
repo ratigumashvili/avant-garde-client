@@ -41,7 +41,6 @@ async function page({ params }) {
               height={100}
               className='w-full md:w-80 h-100 md:h-80 object-cover'
             />
-
           </div>
         )}
 
