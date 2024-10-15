@@ -25,9 +25,9 @@ async function page({ params }) {
     }
   })
 
-  const catArray = uniqueCount(categories)
+  const categoriesArray = uniqueCount(categories)
 
-  const filteredCategories = Object.values(catArray);
+  const filteredCategories = Object.values(categoriesArray);
 
   return (
     <div className='p-4 w-full'>
