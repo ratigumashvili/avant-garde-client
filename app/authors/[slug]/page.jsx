@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { getAuthor } from '@/app/_lib/apiCalls'
-import { removeDuplicates } from '@/app/_lib/helpers'
+import { removeDuplicates, uniqueCount } from '@/app/_lib/helpers'
 
 import MDContent from '@/app/_components/MDContent'
 import ContentHeader from '@/app/_components/ContentHeader'
@@ -19,13 +19,15 @@ async function page({ params }) {
   }
 
   const categories = author[0]?.attributes?.works?.data?.map((work) => {
-    return { 
-      title: work?.attributes?.category?.data?.attributes?.title, 
-      category: work?.attributes?.category?.data?.attributes?.slug 
+    return {
+      title: work?.attributes?.category?.data?.attributes?.title,
+      slug: work?.attributes?.category?.data?.attributes?.slug
     }
   })
 
-  const filteredCategories = removeDuplicates(categories)
+  const catArray = uniqueCount(categories)
+
+  const filteredCategories = Object.values(catArray);
 
   return (
     <div className='p-4 w-full'>
@@ -53,7 +55,8 @@ async function page({ params }) {
           <ul className='mt-2'>
             {filteredCategories.map((cat, index) => (
               <li key={index} className='mb-2 list'>
-                <Link href={`/authors/${params.slug}/${cat.category}`}>{cat.title}</Link>
+                <Link href={`/authors/${params.slug}/${cat.slug}`}>{cat.title}</Link>
+                {/* <span className='absolute -top-1 ml-1 text-xs'>{cat.count}</span> */}
               </li>
             ))}
             <li className='list'>
