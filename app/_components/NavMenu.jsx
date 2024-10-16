@@ -40,7 +40,12 @@ function NavDesktop() {
     return <div className="hidden md:flex md:flex-col gap-4 p-4">
         {navMenu.map(({ id, path, title }) => (
             <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                <Link href={`${path}`} className={`${setActive(pathName, path)} relative`}>{title}</Link>
+                <Link
+                    href={`${path}`}
+                    className={`${setActive(pathName, path)} relative`}
+                >
+                    {title}
+                </Link>
             </h2>
         ))}
         <EngModal />
@@ -61,7 +66,12 @@ function NavMobile({ menuOpen, setMenuOpen }) {
         <div className={`${menuOpen ? 'w-screen min-h-screen opacity-100 p-4 pr-8 flex flex-col gap-4 bg-white transition-opacity ease-in duration-100' : 'opacity-0 h-0 overflow-hidden'}`}>
             {navMenu.map(({ id, path, title }) => (
                 <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                    <button onClick={() => navigate(`${path}`)} className={`${setActive(pathName, path)} relative`}>{title}</button>
+                    <button
+                        onClick={() => navigate(`${path}`)}
+                        className={`${setActive(pathName, path)} relative`}
+                    >
+                        {title}
+                    </button>
                 </h2>
             ))}
             <EngModal />

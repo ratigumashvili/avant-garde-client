@@ -26,7 +26,7 @@ function SidebarNew() {
         {navMenu.map(({ id, path, title, icon }) => (
           <div key={id}>
             <Link href={`${path}`} title={title} className="flex items-center gap-4">
-              {icon} {sidebarOpen && <h2 className="font-gordeziani text-2xl font-light">{title}</h2>}
+              {icon} {sidebarOpen && <h2 className="font-gordeziani text-2xl font-light">{title} ?</h2>}
             </Link>
           </div>
         ))}

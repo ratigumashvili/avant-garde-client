@@ -55,8 +55,10 @@ async function page({ params }) {
           <ul className='mt-2'>
             {filteredCategories.map((cat, index) => (
               <li key={index} className='mb-2 list'>
-                <Link href={`/authors/${params.slug}/${cat.slug}`}>{cat.title}</Link>
-                {/* <span className='absolute -top-1 ml-1 text-xs'>{cat.count}</span> */}
+                <Link href={`/authors/${params.slug}/${cat.slug}`} title={`${cat.count} ჩანაწერი`}>{cat.title}</Link>
+                {/* <span className='absolute -top-1 ml-1 text-xs p-[7px] py-[2px] rounded-full border bg-gray-50' title={`${cat.count} ჩანაწერი`}>
+                  {cat.count}
+                </span> */}
               </li>
             ))}
             <li className='list'>
