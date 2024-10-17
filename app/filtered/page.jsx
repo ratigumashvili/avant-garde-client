@@ -31,6 +31,13 @@ async function Filtered({ searchParams }) {
         response = await getWorkByAuthor(searchParams.author, `pagination[page]=${currentPage}&pagination[pageSize]=${PER_PAGE}`)
     }
 
+    const query = new URLSearchParams({
+        category: searchParams?.category,
+        author: searchParams?.author,
+        catDisplay: searchParams?.catDisplay,
+        authDisplay: searchParams?.authDisplay
+    }).toString()
+
     return (
         <div className="w-full p-4 flex flex-col">
 
@@ -63,7 +70,7 @@ async function Filtered({ searchParams }) {
             </div>
 
             <Pagination
-                path={`/filtered?category=${searchParams?.category}&author=${searchParams?.author}&catDisplay=${searchParams?.catDisplay}&authDisplay=${searchParams?.authDisplay}&page=`}
+                path={`/filtered?${query}&page=`}
                 currentPage={currentPage}
                 response={response}
             />

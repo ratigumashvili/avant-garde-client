@@ -48,9 +48,18 @@ function Filters() {
 
     const handleFormsubmit = (e) => {
         e.preventDefault()
+       
         const form = new FormData(e.target)
+
+        const query = new URLSearchParams({
+            category: form.get("category"),
+            author: form.get("author"),
+            catDisplay: selectedCategory,
+            authDisplay: selectedAuthor
+        }).toString()
+
         setIsOpen(false)
-        router.push(`/filtered?category=${form.get("category")}&author=${form.get("author")}&catDisplay=${selectedCategory}&authDisplay=${selectedAuthor}`)
+        router.push(`/filtered?${query}`)
     }
 
 
