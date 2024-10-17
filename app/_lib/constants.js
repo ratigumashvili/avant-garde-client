@@ -1,59 +1,53 @@
-import { AlignLeft, BookText, House, LocateFixed, MessageCircleQuestion, Speech, UsersRound, Library, Binoculars } from "lucide-react"
-
 export const navMenu = [
     {
         id: 1,
         title: 'მთავარი',
-        path: '/',
-        icon: <House />
+        path: '/'
     },
     {
         id: 2,
         title: 'მანიფესტები',
-        path: '/manifests',
-        icon: <BookText />
+        path: '/manifests'
     },
     {
         id: 3,
         title: 'ავტორები',
-        path: '/authors',
-        icon: <UsersRound />
+        path: '/authors'
     },
     {
         id: 4,
         title: "უავტორო ჩანაწერები",
-        path: '/no-authors',
-        icon: <Speech />
+        path: '/no-authors'
+    },
+    {
+        id: 10,
+        title: "ნამუშევრები",
+        path: '/works'
     },
     {
         id: 5,
         title: "სხვადასხვა",
-        path: '/various',
-        icon: <LocateFixed />
+        path: '/various'
     },
     {
         id: 6,
         title: 'ბიბლიოგრაფია',
-        path: '/bibliography',
-        icon: <AlignLeft />
+        path: '/bibliography'
     },
     {
         id: 7,
         title: 'კვლევები',
         path: '/research',
-        icon: <Library />
     },
     {
         id: 8,
         title: 'რესურსები',
         path: '/resources',
-        icon: <Binoculars />
     },
     {
         id: 9,
         title: 'პროექტის შესახებ',
         path: '/about',
-        icon: <MessageCircleQuestion />
     }
 ]
 

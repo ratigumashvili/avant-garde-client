@@ -36,7 +36,7 @@ export default async function RootLayout({ children }) {
           <Header image={header?.data} />
           <main className="flex pb-8">
             <NavMenu />
-            <div className="w-full">
+            <div className="flex flex-1">
               {children}
             </div>
           </main>
