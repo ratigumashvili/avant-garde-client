@@ -38,6 +38,10 @@ async function Filtered({ searchParams }) {
                 <h2 className="font-gordeziani text-4xl font-light mb-4">ფილტრის შედეგები</h2>
                 <Filters />
             </div>
+
+            <div className="bg-gray-100 p-4 rounded-md mb-4">
+                <h2 className="font-light">კატეგორია: &#34;{searchParams?.catDisplay}&#34; // ავტორი: &#34;{searchParams?.authDisplay}&#34;</h2>
+            </div>
             
             <div className="h-full mb-8">
 
@@ -59,7 +63,7 @@ async function Filtered({ searchParams }) {
             </div>
 
             <Pagination
-                path={`/filtered?category=${searchParams?.category}&author=${searchParams?.author}&page=`}
+                path={`/filtered?category=${searchParams?.category}&author=${searchParams?.author}&catDisplay=${searchParams?.catDisplay}&authDisplay=${searchParams?.authDisplay}&page=`}
                 currentPage={currentPage}
                 response={response}
             />

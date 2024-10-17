@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+
 import { useRouter } from "next/navigation"
 
 import { getAllAuthors, getAllCategories } from "../_lib/apiCalls"
@@ -16,6 +17,9 @@ function Filters() {
 
     const [categories, setCategories] = useState([])
     const [authors, setAuthors] = useState([])
+
+    const [selectedCategory, setSelectedCategory] = useState("ყველა")
+    const [selectedAuthor, setSelectedAuthor] = useState("ყველა")
 
     const router = useRouter()
 
@@ -46,7 +50,7 @@ function Filters() {
         e.preventDefault()
         const form = new FormData(e.target)
         setIsOpen(false)
-        router.push(`/filtered?category=${form.get("category")}&author=${form.get("author")}`)
+        router.push(`/filtered?category=${form.get("category")}&author=${form.get("author")}&catDisplay=${selectedCategory}&authDisplay=${selectedAuthor}`)
     }
 
 
@@ -65,7 +69,7 @@ function Filters() {
                         <form className="flex flex-col items-start justify-between gap-6 p-4" onSubmit={handleFormsubmit}>
                             <div className="flex flex-col items-start gap-2">
                                 <p>კატეგორია</p>
-                                <select className="w-full border p-3 rounded-sm" name="category">
+                                <select className="w-full border p-3 rounded-sm" name="category" onChange={(e) => setSelectedCategory(e.target.options[e.target.selectedIndex].text)}>
                                     <option value="all">ყველა</option>
                                     {categories?.length !== 0 && categories.map((category) => (
                                         <option key={category.id} value={category.attributes.slug}>{category.attributes.title}</option>
@@ -74,7 +78,7 @@ function Filters() {
                             </div>
                             <div className="flex flex-col items-start gap-2 w-full">
                                 <p>ავტორი</p>
-                                <select className="w-full border p-3 rounded-sm" name="author">
+                                <select className="w-full border p-3 rounded-sm" name="author" onChange={(e) => setSelectedAuthor(e.target.options[e.target.selectedIndex].text)}>
                                     <option value="all">ყველა</option>
                                     {authors?.length !== 0 && authors?.map((author) => (
                                         <option key={author.id} value={author.attributes.slug}>{author.attributes.name}</option>
