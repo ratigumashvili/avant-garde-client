@@ -50,10 +50,10 @@ function EngModal() {
                             <div className='flex items-center justify-between flex-col md:flex-row gap-4 pt-8 border-t'>
                                 <div className="flex items-center gap-2">
                                     <Link href={"https://iliauni.edu.ge/en"} target="blank">
-                                        <Image src="/iliauni-logo_eng.png" width={50} height={50} alt="ISU logo" className="grayscale" />
+                                        <Image src="/iliauni-logo_eng.png" width={50} height={50} alt="ISU logo" className="grayscale hover:grayscale-0 transition-all duration-300" />
                                     </Link>
                                     <Link href={'mailto:dh@iliauni.edu.ge'}>
-                                        <Image src={"/dh-isu.svg"} width={70} height={70} alt="DH logo" className="grayscale" />
+                                        <Image src={"/dh-isu.svg"} width={70} height={70} alt="DH logo" className="grayscale hover:grayscale-0 transition-all duration-300" />
                                     </Link>
                                 </div>
                                 <p className="font-light text-xs">
