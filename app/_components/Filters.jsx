@@ -65,7 +65,7 @@ function Filters() {
 
     return (
         <div>
-            <button onClick={() => setIsOpen(true)} title="ფილტრი">
+            <button onClick={() => setIsOpen(true)} title="ფილტრი" className="cursor-pointer">
                 <IconFilter />
             </button>
 
