@@ -11,8 +11,6 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import IconFilter from "./icons/IconFilter"
 import IconClose from "./icons/IconClose"
 
-import { allAuthors, allCategories } from "../_lib/constants"
-
 function Filters() {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -29,7 +27,6 @@ function Filters() {
         try {
             const response = await getAllCategories()
             setCategories(response.data)
-            setCategories(prevItems => [allCategories, ...prevItems])
         } catch (error) {
             return error.message
         }
@@ -39,7 +36,6 @@ function Filters() {
         try {
             const response = await getAllAuthors(`pagination[page]=1&pagination[pageSize]=100`)
             setAuthors(response.data)
-            setAuthors(prevItems => [allAuthors, ...prevItems])
         } catch (error) {
             return error.message
         }
@@ -88,6 +84,7 @@ function Filters() {
                                     name="category"
                                     onChange={(e) => setSelectedCategory(e.target.options[e.target.selectedIndex].text)}
                                 >
+                                    <option value="all">ყველა</option>
                                     {categories?.length !== 0 && categories?.map((category) => (
                                         <option key={category.id} value={category.attributes.slug}>{category.attributes.title}</option>
                                     ))}
@@ -100,6 +97,7 @@ function Filters() {
                                     name="author"
                                     onChange={(e) => setSelectedAuthor(e.target.options[e.target.selectedIndex].text)}
                                 >
+                                    <option value="all">ყველა</option>
                                     {authors?.length !== 0 && authors?.map((author) => (
                                         <option key={author.id} value={author.attributes.slug}>{author.attributes.name}</option>
                                     ))}

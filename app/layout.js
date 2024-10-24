@@ -1,9 +1,9 @@
-
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import NavMenu from "./_components/NavMenu";
 
 import { generateMetaGlobal, getHeaderImage } from "./_lib/apiCalls";
+import Analytics from "./_lib/Analytics";
 
 import { firaGo, gordeziani } from "./_lib/fonts";
 
@@ -26,11 +26,14 @@ export async function generateMetadata() {
 }
 
 export default async function RootLayout({ children }) {
-  
+
   const header = await getHeaderImage()
 
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+       <Analytics />
+      </head>
       <body className={`${firaGo.variable} ${gordeziani.variable} font-firaGo font-light flex flex-col h-screen`}>
         <div className="px-4 container container-xl mx-auto">
           <Header image={header?.data} />

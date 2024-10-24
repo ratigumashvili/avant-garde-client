@@ -47,7 +47,7 @@ async function Filtered({ searchParams }) {
             </div>
 
             <div className="bg-gray-100 p-4 rounded-md mb-4">
-                <h2 className="font-light">კატეგორია: &#34;{searchParams?.catDisplay}&#34; // ავტორი: &#34;{searchParams?.authDisplay}&#34;</h2>
+                <h2 className="font-light">კატეგორია: &#34;{searchParams?.catDisplay}&#34; // ავტორი: &#34;{searchParams?.authDisplay}&#34; // ნაპოვნია {response?.meta?.pagination?.total} ჩანაწერი</h2>
             </div>
             
             <div className="h-full mb-8">

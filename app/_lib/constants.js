@@ -54,19 +54,3 @@ export const navMenu = [
 export const FIRST_PAGE = 1
 export const PER_PAGE = 24
 
-export const allCategories = {
-    id: 0,
-    attributes: {
-        title: "ყველა",
-        slug: "all"
-    }
-}
-
-export const allAuthors = {
-    id: 0,
-    attributes: {
-        name: "ყველა",
-        slug: "all"
-    }
-}
-
