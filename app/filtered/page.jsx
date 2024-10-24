@@ -41,8 +41,8 @@ async function Filtered({ searchParams }) {
     return (
         <div className="w-full p-4 flex flex-col">
 
-            <div className="flex items-center justify-between gap-2">
-                <h2 className="font-gordeziani text-4xl font-light mb-4">ფილტრის შედეგები</h2>
+            <div className="flex items-center justify-between gap-2 mb-4">
+                <h2 className="font-gordeziani text-4xl font-light">ფილტრის შედეგები</h2>
                 <Filters />
             </div>
 
@@ -57,7 +57,7 @@ async function Filtered({ searchParams }) {
                 <ul>
                     {response?.data?.length !== 0 && response?.data?.map((item) => (
                         <li key={item.id} className="my-2 list">
-                            <Link href={`/works/${item.id}`}>
+                            <Link href={`/texts/${item.id}`}>
                                 {item?.attributes?.authors?.data?.map((author, index) => (
                                     <span key={author.id}>{author.attributes.name}{separate(item?.attributes?.authors?.data, index)}</span>
                                 ))}

@@ -26,7 +26,7 @@ async function SingleVarious({ params, searchParams }) {
                 <ul>
                     {response?.data?.data?.map((work) => (
                         <li key={work.id} className='my-2'>
-                            <Link href={`/works/${work.id}`}>{work.attributes.title}</Link>
+                            <Link href={`/texts/${work.id}`}>{work.attributes.title}</Link>
                         </li>
                     ))}
                 </ul>

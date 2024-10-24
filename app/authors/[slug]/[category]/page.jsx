@@ -29,7 +29,7 @@ async function page({ params, searchParams }) {
             <ul className='h-full w-full mb-8'>
                 {response?.data?.length && response.data.map((work) => (
                     <li key={work.id} className='my-2 list'>
-                        <Link href={`/works/${work.id}`}>{work.attributes.title}</Link>
+                        <Link href={`/texts/${work.id}`}>{work.attributes.title}</Link>
                     </li>
                 ))}
             </ul>

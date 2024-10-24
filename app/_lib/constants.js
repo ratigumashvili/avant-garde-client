@@ -20,14 +20,14 @@ export const navMenu = [
         path: '/no-authors'
     },
     {
-        id: 10,
-        title: "ნამუშევრები",
-        path: '/works'
-    },
-    {
         id: 5,
         title: "სხვადასხვა",
         path: '/various'
+    },
+    {
+        id: 10,
+        title: "ტექსტები",
+        path: '/texts'
     },
     {
         id: 6,
@@ -53,4 +53,20 @@ export const navMenu = [
 
 export const FIRST_PAGE = 1
 export const PER_PAGE = 24
+
+export const allCategories = {
+    id: 0,
+    attributes: {
+        title: "ყველა",
+        slug: "all"
+    }
+}
+
+export const allAuthors = {
+    id: 0,
+    attributes: {
+        name: "ყველა",
+        slug: "all"
+    }
+}
 

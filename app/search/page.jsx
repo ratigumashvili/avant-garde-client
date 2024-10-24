@@ -30,7 +30,7 @@ async function SearchPage({ searchParams }) {
             <ul className="h-full">
                 {response?.data?.map((work) => (
                     <li key={work.id} className="my-2 list">
-                        <Link href={`/works/${work.id}`}>
+                        <Link href={`/texts/${work.id}`}>
                             {work.attributes.authors.data.length !== 0 && work.attributes.authors.data.map((author, index) => (
                                 <span key={author.id}> {author.attributes.name}{separate(work?.attributes?.authors?.data, index)}</span>
                             ))}
