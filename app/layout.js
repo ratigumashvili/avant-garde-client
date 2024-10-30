@@ -35,7 +35,7 @@ export default async function RootLayout({ children }) {
        <Analytics />
       </head>
       <body className={`${firaGo.variable} ${gordeziani.variable} font-firaGo font-light flex flex-col h-screen`}>
-        <div className="px-4 container container-xl mx-auto">
+        <div className="px-4 container mx-auto" style={{maxWidth: "1200px"}}>
           <Header image={header?.data} />
           <main className="flex pb-8">
             <NavMenu />

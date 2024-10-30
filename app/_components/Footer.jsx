@@ -5,7 +5,7 @@ import { getCurrentYear } from "../_lib/helpers"
 function Footer() {
     return (
         <div className='bg-black text-white mt-auto flex items-center flex-col gap-4 md:justify-between md:flex-row text-center p-4'>
-            <div className="container container-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 px-4">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-3 px-4" style={{maxWidth: "1200px"}}>
             <div className="flex items-center gap-2">
                 <Link href={"https://iliauni.edu.ge/ge"} target="blank">
                     <Image src="/iliauni-logo_eng.png" width={50} height={50} alt="ISU logo" className="brightness-0 invert-[1] opacity-70 hover:opacity-100 transition-all" />
