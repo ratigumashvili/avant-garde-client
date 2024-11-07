@@ -22,7 +22,7 @@ async function Authors({ searchParams }) {
                 {response?.data?.map((author) => (
                     <Link key={author.id} href={`/authors/${author.attributes.slug}`} className="flex flex-col gap-2 text-center mb-4">
                         {author?.attributes?.photo?.data?.attributes?.url ? (
-                            <Image className="w-full h-80 object-cover" src={author?.attributes?.photo?.data?.attributes?.url} alt={author.attributes.name} width={100} height={100} />
+                            <Image className="w-full h-80 object-cover object-top" src={author?.attributes?.photo?.data?.attributes?.url} alt={author.attributes.name} width={100} height={100} />
                         ) : (
                             <Image className="w-full h-80 object-contain border grayscale p-8" src='/iliauni-logo_eng.png' alt={author.attributes.name} width={100} height={100} />
                         )}

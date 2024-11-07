@@ -2,12 +2,10 @@
 
 import { useState } from "react"
 
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-
-
-import { setActive } from "../_lib/helpers"
 import { navMenu } from '../_lib/constants'
+
+import Navlink from "./Navlink"
+import NavButton from "./NavButton"
 import EngModal from "./EngModal"
 
 function NavMenu() {
@@ -36,47 +34,33 @@ function NavMenu() {
 }
 
 function NavDesktop() {
-    const pathName = usePathname()
-    return <div className="hidden md:flex md:flex-col gap-4 p-4">
-        {navMenu.map(({ id, path, title }) => (
-            <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                <Link
-                    href={`${path}`}
-                    className={`${setActive(pathName, path)} relative`}
-                >
-                    {title}
-                </Link>
-            </h2>
-        ))}
-        <EngModal />
-    </div>
+    return (
+        <>
+            <div className="hidden md:flex md:flex-col gap-4 p-4">
+                {navMenu.map(({ id, path, title }) => (
+                    <h2 key={id} className='font-gordeziani font-light text-3xl'>
+                        <Navlink href={`${path}`}>{title}</Navlink>
+                    </h2>
+                ))}
+                <EngModal />
+            </div>
+        </>
+    )
 }
 
 function NavMobile({ menuOpen, setMenuOpen }) {
-
-    const router = useRouter()
-    const pathName = usePathname()
-
-    const navigate = (path) => {
-        router.replace(path, { scroll: false })
-        setMenuOpen(false)
-    }
-
-    return <div className="md:hidden w-[10px] z-10">
-        <div className={`${menuOpen ? 'w-screen min-h-screen opacity-100 p-4 pr-8 flex flex-col gap-4 bg-white transition-opacity ease-in duration-100' : 'opacity-0 h-0 overflow-hidden'}`}>
-            {navMenu.map(({ id, path, title }) => (
-                <h2 key={id} className='font-gordeziani font-light text-3xl'>
-                    <button
-                        onClick={() => navigate(`${path}`)}
-                        className={`${setActive(pathName, path)} relative`}
-                    >
-                        {title}
-                    </button>
-                </h2>
-            ))}
-            <EngModal />
+    return (
+        <div className="md:hidden w-[10px] z-10">
+            <div className={`${menuOpen ? 'w-screen min-h-screen opacity-100 p-4 pr-8 flex flex-col gap-4 bg-white transition-opacity ease-in duration-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+                {navMenu.map(({ id, title, path }) => (
+                    <h2 key={id} className='font-gordeziani font-light text-3xl'>
+                        <NavButton path={path} setMenuOpen={setMenuOpen}>{title}</NavButton>
+                    </h2>
+                ))}
+                <EngModal />
+            </div>
         </div>
-    </div>
+    )
 }
 
 
