@@ -15,7 +15,10 @@ module.exports = {
       fontFamily: {
         gordeziani: ['var(--font-gordeziani)'],
         firaGo: ['var(--font-firaGo)']
-      }
+      },
+      // fontWeight: {
+      //   bolder: 700
+      // }
     },
   },
   plugins: [],

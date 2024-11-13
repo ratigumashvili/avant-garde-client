@@ -7,3 +7,9 @@
         @apply pl-8 relative before:absolute before:w-6 before:h-1 before:left-3 before:top-[50%] before:translate-x-[-50%] before:bg-black
     }
 }
+
+@layer components {
+    b, strong {
+        @apply font-bold
+    }
+}
